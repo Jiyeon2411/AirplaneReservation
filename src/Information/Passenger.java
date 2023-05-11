@@ -3,12 +3,10 @@ package Information;
 public class Passenger {
 	String psgName;
 	int psgId;
-	int rsvNum;
 	
-	public Passenger(String psgName, int psgId, int rsvNum) {
+	public Passenger(String psgName, int psgId) {
 		this.psgName = psgName;
 		this.psgId = psgId;
-		this.rsvNum = rsvNum;
 	}
 
 	public String getPsgName() {
@@ -26,14 +24,4 @@ public class Passenger {
 	public void setPsgId(int psgId) {
 		this.psgId = psgId;
 	}
-
-	public int getRsvNum() {
-		return rsvNum;
-	}
-
-	public void setRsvNum(int rsvNum) {
-		this.rsvNum = rsvNum;
-	}
-	
-	
 }

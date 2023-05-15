@@ -1,7 +1,5 @@
 package Main;
 
-import java.io.PrintStream;
-
 import Seat.BusinessClass;
 
 import Seat.EconomyClass;
@@ -14,17 +12,17 @@ public class Reservation {
     private Passenger passenger;
     private Schedule schedule;
     private int fare;
+    
     public Reservation(Passenger passenger, Schedule schedule, int fare) {
         this.passenger = passenger;
         this.schedule = schedule;
         this.fare = fare;
     }
     public void getReservationDetails() {
-        System.out.println("--------------------------예약 내역--------------------------");
-        System.out.println("이름  |  예약번호  |  편명  |  출발지  |  도착지  |  출발시각 ");
-        System.out.println("----------------------------------------------------------");
+        
         System.out.println(passenger.getName() + "\t" + passenger.getrsvNum() + "\t" + schedule.getFlightNumber() + "\t" +
         schedule.getStartPoint() + "\t" + schedule.getDestination() + "\t" + schedule.getDepartureTime());
+        
         SeatClass seatClass = getSeatClass(fare);
         if (seatClass != null) {
             System.out.println("좌석등급: " + seatClass.getSeatClass(fare));

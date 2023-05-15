@@ -3,7 +3,9 @@ package Main;
 public class Passenger {
 	
     private String name;
+    
     private String rsvNum;
+    
     public Passenger(String name, String rsvNum) {
         this.name = name;
         this.rsvNum = rsvNum;

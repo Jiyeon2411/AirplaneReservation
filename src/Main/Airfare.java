@@ -3,6 +3,7 @@ package Main;
 public class Airfare {
 	
     private int fare;
+    
     public Airfare(int fare) {
         this.fare = fare;
     }

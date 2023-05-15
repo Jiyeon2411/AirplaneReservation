@@ -17,7 +17,7 @@ public class Main {
         Schedule schedule3 = new Schedule("CD5678", "인천", "파리", "2022-12-31 03:00");
         int fare3 = 300;
         
-        Schedule schedule4 = new Schedule("SG3131", "인천", "나트랑", "2013-02-02 10:00");
+        Schedule schedule4 = new Schedule("SG3131", "부산", "나트랑", "2013-02-02 10:00");
         int fare4 = 40;
         
         System.out.println("--------------------------예약 내역--------------------------");

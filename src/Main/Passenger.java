@@ -1,27 +1,23 @@
-package Information;
+package Main;
 
 public class Passenger {
-	String psgName;
-	int psgId;
 	
-	public Passenger(String psgName, int psgId) {
-		this.psgName = psgName;
-		this.psgId = psgId;
-	}
-
-	public String getPsgName() {
-		return psgName;
-	}
-
-	public void setPsgName(String psgName) {
-		this.psgName = psgName;
-	}
-
-	public int getPsgId() {
-		return psgId;
-	}
-
-	public void setPsgId(int psgId) {
-		this.psgId = psgId;
-	}
+    private String name;
+    private String rsvNum;
+    public Passenger(String name, String rsvNum) {
+        this.name = name;
+        this.rsvNum = rsvNum;
+    }
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public String getrsvNum() {
+        return rsvNum;
+    }
+    public void setrsvNum(String rsvNum) {
+        this.rsvNum = rsvNum;
+    }
 }

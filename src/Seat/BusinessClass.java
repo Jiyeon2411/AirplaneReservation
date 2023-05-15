@@ -1,10 +1,9 @@
 package Seat;
 
 public class BusinessClass implements SeatClass {
-
+	
 	@Override
-	public String getClass(int fare) {
-		return null;
-	}
-
+    public String getSeatClass(int fare) {
+        return "Business";
+    }
 }

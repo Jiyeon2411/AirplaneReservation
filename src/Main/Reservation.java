@@ -1,76 +1,46 @@
-package Information;
+package Main;
+
+import java.io.PrintStream;
+
+import Seat.BusinessClass;
+
+import Seat.EconomyClass;
+
+import Seat.FirstClass;
+
+import Seat.SeatClass;
 
 public class Reservation {
-	String psgName;
-	int rsvNum;
-	int flightTime;
-	String startPoint; //출발지
-	String dest; //도착지
-	String flightNum; //편명
-	int fare; //항공값
-	
-	public Reservation(String psgName, int rsvNum, int flightTime, String startPoint, String dest, String flightNum, int fare) {
-		this.psgName = psgName;
-		this.rsvNum = rsvNum;
-		this.flightTime = flightTime;
-		this.startPoint = startPoint;
-		this.dest = dest;
-		this.flightNum = flightNum;
-		this.fare = fare;
-	}
-
-	@Override
-	public String toString() {
-		return psgName + rsvNum + "출발지: " + startPoint + "도착지: " + dest + flightNum + flightTime;
-	}
-
-	public String getPsgName() {
-		return psgName;
-	}
-
-	public void setPsgName(String psgName) {
-		this.psgName = psgName;
-	}
-
-	public int getRsvNum() {
-		return rsvNum;
-	}
-
-	public void setRsvNum(int rsvNum) {
-		this.rsvNum = rsvNum;
-	}
-
-	public int getFlightTime() {
-		return flightTime;
-	}
-
-	public void setFlightTime(int flightTime) {
-		this.flightTime = flightTime;
-	}
-
-	public String getStartPoint() {
-		return startPoint;
-	}
-
-	public void setStartPoint(String startPoint) {
-		this.startPoint = startPoint;
-	}
-
-	public String getDest() {
-		return dest;
-	}
-
-	public void setDest(String dest) {
-		this.dest = dest;
-	}
-
-	public String getFlightNum() {
-		return flightNum;
-	}
-
-	public void setFlightNum(String flightNum) {
-		this.flightNum = flightNum;
-	}
-	
-	
+    private Passenger passenger;
+    private Schedule schedule;
+    private int fare;
+    public Reservation(Passenger passenger, Schedule schedule, int fare) {
+        this.passenger = passenger;
+        this.schedule = schedule;
+        this.fare = fare;
+    }
+    public void getReservationDetails() {
+        System.out.println("--------------------------예약 내역--------------------------");
+        System.out.println("이름  |  예약번호  |  편명  |  출발지  |  도착지  |  출발시각 ");
+        System.out.println("----------------------------------------------------------");
+        System.out.println(passenger.getName() + "\t" + passenger.getrsvNum() + "\t" + schedule.getFlightNumber() + "\t" +
+        schedule.getStartPoint() + "\t" + schedule.getDestination() + "\t" + schedule.getDepartureTime());
+        SeatClass seatClass = getSeatClass(fare);
+        if (seatClass != null) {
+            System.out.println("좌석등급: " + seatClass.getSeatClass(fare));
+        } else {
+            System.out.println("좌석등급: 해당하는 등급이 없습니다.");
+        }
+    }
+    private SeatClass getSeatClass(int fare) {
+        SeatClass seatClass = null;
+        if (fare >= 300) {
+            seatClass = new FirstClass();
+        } else if (fare >= 50 && fare <= 300) {
+            seatClass = new BusinessClass();
+        } else if (fare <= 50) {
+            seatClass = new EconomyClass();
+        }
+        return seatClass;
+    }
 }
